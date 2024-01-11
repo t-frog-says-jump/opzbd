@@ -1,0 +1,51 @@
+ALTER TABLE IF EXISTS public."ticket"
+    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS public."event"
+    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS public."holl"
+    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS public."place"
+    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS public."zone"
+    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS public."group"
+    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS public."musician"
+    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS public."Users"
+    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS public.audit_log
+    ENABLE ROW LEVEL SECURITY;
+
+
+GRANT ALL ON TABLE public."ticket" TO admin WITH GRANT OPTION;
+GRANT ALL ON TABLE public."event" TO admin WITH GRANT OPTION;
+GRANT ALL ON TABLE public."holl" TO admin WITH GRANT OPTION;
+GRANT ALL ON TABLE public."place" TO admin WITH GRANT OPTION;
+GRANT ALL ON TABLE public."zone" TO admin WITH GRANT OPTION;
+GRANT ALL ON TABLE public."group" TO admin WITH GRANT OPTION;
+GRANT ALL ON TABLE public."musician" TO admin WITH GRANT OPTION;
+GRANT ALL ON TABLE public."Users" TO admin WITH GRANT OPTION;
+GRANT ALL ON TABLE public."audit_log" TO admin WITH GRANT OPTION;
+
+
+GRANT INSERT, SELECT, UPDATE, DELETE ON TABLE public."ticket" TO "Manager";
+GRANT INSERT, SELECT, UPDATE, DELETE ON TABLE public."event" TO "Manager";
+GRANT INSERT, SELECT, UPDATE, DELETE ON TABLE public."group" TO "Manager";
+GRANT INSERT, SELECT, UPDATE, DELETE ON TABLE public."musician" TO "Manager";
+GRANT SELECT ON TABLE public."holl" TO "Manager";
+GRANT SELECT ON TABLE public."zone" TO "Manager";
+GRANT SELECT ON TABLE public."place" TO "Manager";
+
+
+GRANT SELECT ON TABLE public."holl" TO "Client";
+GRANT SELECT ON TABLE public."zone" TO "Client";
+GRANT SELECT ON TABLE public."place" TO "Client";
+GRANT SELECT ON TABLE public."holl" TO "Client";
+GRANT SELECT ON TABLE public."zone" TO "Client";
+GRANT SELECT ON TABLE public."place" TO "Client";
+GRANT SELECT ON TABLE public."holl" TO "Client";
+
+
+
+
